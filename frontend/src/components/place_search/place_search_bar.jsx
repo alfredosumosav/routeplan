@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-// import '../../lib/mapquest-js';
-// import '../../lib/mapquest-js.css';
 const keys = require('../../config/api_keys');
 
 class PlaceSearchBar extends Component {
@@ -34,9 +32,8 @@ class PlaceSearchBar extends Component {
     }
 
     _getLocation() {
-        this.ps.on('change', e => {
-            console.log(e.result.latlng);
-                this.props.input({
+        this.ps.on('change', e => {            
+            this.props.input({
                 lat: e.result.latlng["lat"],
                 lng: e.result.latlng["lng"]
             });
@@ -60,8 +57,7 @@ class PlaceSearchBar extends Component {
     render() {        
         return (
             <input
-                type='search'
-                id='place-search-input'
+                type='search'                
                 ref={placeSearchInput => { this.placeSearchInput = placeSearchInput }}
                 placeholder={this.state.placeholder}   
                 onChange={this.handleChange}
