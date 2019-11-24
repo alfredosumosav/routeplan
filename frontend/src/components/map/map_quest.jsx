@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Sidebar from './sidebar'
+import './sidebar.css'
 const axios = require('axios');
 var qs = require('qs');
 var assert = require('assert');
@@ -13,7 +14,8 @@ class MapQuest extends Component {
 
     this.state = {
       error: null,
-      value: ""
+      value: "",
+      showSidebar: false
     };
     this.pointsOfInterest = [];
     this.filteredPoints = [];
@@ -197,23 +199,26 @@ class MapQuest extends Component {
     };
 
     return (
-      <div className="col-left">
+      <div className="show-page">
         <div id="map" style={mapStyle}></div>
-        <form>
-          <select onChange={this.handleChange} value={this.state.value}>
-            <option value="">--Filter by place you'd like to visit--</option>
-            <option value="5812">Restaurants</option>
-            <option value="8412">Museums</option>
-            <option value="799">Parks</option>
-            <option value="5813">Bars</option>
-            <option value="5942">Books</option>
-            <option value="602101">ATM</option>
-            <option value="5461">Bakeries</option>
-          </select>
-        </form>
-        {this.filteredPoints.length > 0 && (
-          <Sidebar pointsOfInterest={this.filteredPoints} />
-        )}
+        <div className='sidebar'>
+            <form>
+                <select className='col-right' onChange={this.handleChange} value={this.state.value}>
+                    <option value="5812">Restaurants</option>
+                    <option value="8412">Museums</option>
+                    <option value="799">Parks</option>
+                    <option value="5813">Bars</option>
+                    <option value="5942">Books</option>
+                    <option value="602101">ATM</option>
+                    <option value="5461">Bakeries</option>
+                </select>
+            </form>
+            <div className='fixed-scroll'>
+              {this.filteredPoints.length > 0 && (
+                <Sidebar pointsOfInterest={this.filteredPoints} />
+              )}
+            </div>
+        </div>
       </div>
     );
   }

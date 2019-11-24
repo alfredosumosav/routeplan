@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './sidebar.css'
 // import CurrentTrip from './current_trip'
 const axios = require('axios');
 var qs = require('qs');
@@ -60,7 +61,7 @@ SyHM5YXEECxfMWwSVnZi_LWvlDVpBuGEa0VjvdU-8EstUwDb_yiNvXHYx';
         return (
             <div className="poi">
                 <h3>{this.props.name}</h3>
-                <img src={defaultImg}></img>
+                <img className='poi_img' src={defaultImg}></img>
                 {this.state.data && <div>Yelp Rating: {this.state.data.rating || 'None'}</div>}
                 <button onClick={this.handleClick}>Add to trip</button>
             </div>

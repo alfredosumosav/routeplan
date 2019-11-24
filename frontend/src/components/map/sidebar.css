@@ -1,0 +1,31 @@
+.show-page{
+    display: flex;
+}
+
+.sidebar{
+    position: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 303px;
+}
+
+.col-right {
+    position: relative;
+    align-content: center;
+}
+
+.fixed-scroll{
+    position: relative;
+    overflow-y: scroll;
+    height: 73vh;
+}
+.poi{
+    
+}
+
+.poi_img{
+    height: 200px;
+    width: 200px;
+}
+
+
