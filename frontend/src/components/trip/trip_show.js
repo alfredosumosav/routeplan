@@ -1,5 +1,6 @@
 import React from "react";
 import MapQuest from '../map/map_quest';
+import {getTrip} from '../../util/trip_api_util'
 const keys = require("../../config/api_keys");
 
 class TripShow extends React.Component {
@@ -7,37 +8,44 @@ class TripShow extends React.Component {
     super(props);
 
     this.state = {
-      origin: "",
-      destination: ""
+      origin: [],
+      destination: []
     }
   }
 
 
   componentDidMount() {  
-    this.props.fetchTrip(this.props.tripId)
-      .then(this.setState({
-        origin: this.props.origin,
-        destination: this.props.destination
-      }))
-  };
+    getTrip(this.props.tripId).then(res => {
+      this.setState({
+        origin: res.data.origin,
+        destination: res.data.destination
+      })
+    })
+    // this.props.fetchTrip(this.props.tripId)
+  }
 
 
-  render() {      
-    const { origin, destination } = this.props;
-    
-    if (!origin.length || !destination.length) return null;
+  render() {
+    let origin = this.state.origin;
+    let destination = this.state.destination;
+    if (!(origin.length && destination.length)) return null;
 
     return (
       <div>
-        <MapQuest
-          center={origin} 
-          baseLayer={"map"}
-          zoom={12}
-          routeStart={origin} 
-          routeEnd={destination} 
-          apiKey={keys.MAP_KEY}
-          maxMatches={500}
-        />
+        <div>
+          <MapQuest
+            center={origin}
+            baseLayer={"map"}
+            zoom={12}
+            routeStart={origin}
+            routeEnd={destination}
+            apiKey={keys.MAP_KEY}
+            maxMatches={500}
+          />
+        </div>
+        <div>
+          {/* <TripShowDetailContainer /> */}
+        </div>
       </div>
     );
   }
