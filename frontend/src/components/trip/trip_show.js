@@ -23,7 +23,6 @@ class TripShow extends React.Component {
     // this.props.fetchTrip(this.props.tripId)
   }
 
-
   render() {
     let origin = this.state.origin;
     let destination = this.state.destination;
@@ -40,6 +39,7 @@ class TripShow extends React.Component {
             routeEnd={destination}
             apiKey={keys.MAP_KEY}
             maxMatches={500}
+            tripPois={this.props.pois}
           />
         </div>
         <div>

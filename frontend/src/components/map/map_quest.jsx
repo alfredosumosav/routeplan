@@ -126,11 +126,32 @@ class MapQuest extends Component {
           this.markers.push(curMarker);
         }
       }
+    } 
+  }
+
+  showTripPois = () => {
+    if (this.props.tripPois && this.props.tripPois.length > 0) {
+      for (let pt of this.props.tripPois) {
+        let curMarker = window.L.marker([pt.lat, pt.lng], {
+          icon: window.L.mapquest.icons.marker({
+            shadow: false
+          }),
+          draggable: false,
+          opacity: 0.5
+        });
+        curMarker
+          .bindPopup(
+            pt.name + "<br/>" + pt.address + ", " + pt.city
+          )
+          .addTo(this.map);
+        this.markers.push(curMarker);
+      }
     }
   }
 
   render() {
     this.filterMap();
+    // this.showTripPois();
 
     const mapStyle = {
       height: "75vh",

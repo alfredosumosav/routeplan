@@ -7,10 +7,12 @@ const mapStateToProps = (state, ownProps) => {
   let tripId = ownProps.match.params.tripId;
   let origin = [];
   let destination = [];
+  let pois = [];
   
   if (state.trips.selected) {
     origin = state.trips.selected.origin;
     destination = state.trips.selected.destination;    
+    pois = state.trips.selected.pois;
   }
 
   return {
@@ -18,7 +20,8 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.session.user,
     tripId,
     origin,
-    destination
+    destination,
+    pois
   };
 };
 
