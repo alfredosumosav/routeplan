@@ -209,8 +209,8 @@ fetchMapData(boundingBoxParam) {
 
 ---
 
-## Team
-- [Alfredo Sumosa](https://github.com/alfredosumosav)
-- [Renata Santoso](https://github.com/resant18)
-- [Tim Scatterday](https://github.com/timscatterday)
-- [Lance Wong](https://github.com/LanceSanity)
+## Meet the Team
+[@Alfredo Sumosa](https://github.com/alfredosumosav) &nbsp; <a href="https://linkedin.com/in/alfredosumosa" target="_blank"><img src="https://trello-attachments.s3.amazonaws.com/5b9270821913198b25dc6c3f/5f46a6efdeb52b87141f914f/4d56cffcc32eb028fa82037d3d027aa8/linkedin.svg" width="14px"></img></a></br>
+[@Renata Santoso](https://github.com/resant18) &nbsp; <a href="https://www.linkedin.com/in/renata-santoso" target="_blank"><img src="https://trello-attachments.s3.amazonaws.com/5b9270821913198b25dc6c3f/5f46a6efdeb52b87141f914f/4d56cffcc32eb028fa82037d3d027aa8/linkedin.svg" width="14px"></img></a></br>
+[@Tim Scatterday](https://github.com/timscatterday) &nbsp; <a href="https://www.linkedin.com/in/tim-scatterday-09283067" target="_blank"><img src="https://trello-attachments.s3.amazonaws.com/5b9270821913198b25dc6c3f/5f46a6efdeb52b87141f914f/4d56cffcc32eb028fa82037d3d027aa8/linkedin.svg" width="14px"></img></a></br>
+[@Lance Wong](https://github.com/LanceSanity) &nbsp; <a href="https://www.linkedin.com/in/lanceawong" target="_blank"><img src="https://trello-attachments.s3.amazonaws.com/5b9270821913198b25dc6c3f/5f46a6efdeb52b87141f914f/4d56cffcc32eb028fa82037d3d027aa8/linkedin.svg" width="14px"></img></a></br>
