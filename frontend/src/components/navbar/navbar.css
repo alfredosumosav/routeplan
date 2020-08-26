@@ -38,13 +38,61 @@ h3.title {
 }
 
 footer {
-  height: 85px;
-  text-align: center;
+  font-family: "Lato", "Helvetica Neue", sans-serif;
   color: #fff;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.footer-container {
+  width: 100%;
+  display: flex;
+  padding: 2.5vh;
+  flex-direction: column;
   align-items: center;
-  font-size: 18px;
+  justify-content: center;
+}
+
+/* container */
+.member {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.member-name,
+.copyright {
+  color: lightgray;
+  font-size: 1.25em;
+  padding: 0 5px;
+}
+
+.member-links {
+  display: flex;
+  flex-direction: row;
+}
+
+.gh,
+.in {
+  margin: 2.5px;
+}
+
+.gh i,
+.in i {
+  border-radius: 50%;
+  font-size: 20px;
+  color: lightgray;
+  transition: box-shadow 0.3s;
+}
+
+.gh i:hover,
+.in i:hover {
+  color: rgb(234, 234, 234);
+  cursor: pointer;
+  box-shadow: 0 0 35px -2px rgba(255, 255, 255, 0.4);
 }
 
 .btn-logout {
@@ -181,4 +229,24 @@ footer {
 
 #signup:hover {
   text-decoration: none;
+}
+
+@media only screen and (min-width: 500px) {
+  .footer-container {
+    flex-direction: row;
+  }
+
+  .member {
+    justify-content: center;
+    width: 25%;
+  }
+
+  .member-name {
+    width: min-content;
+    padding: 0 1.25vw;
+  }
+
+  .member-links {
+    min-width: 50px;
+  }
 }
